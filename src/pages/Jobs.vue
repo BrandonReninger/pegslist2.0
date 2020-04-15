@@ -1,6 +1,8 @@
 <template>
-  <div class="jobs">
-    <p>here is the jerbs page</p>
+  <div class="jobs col-12">
+    <div class="row">
+      <create-job></create-job>
+    </div>
   </div>
 </template>
 
@@ -11,9 +13,15 @@ export default {
   data() {
     return {};
   },
-  computed: {},
+  computed: {
+    jobs() {
+      return this.$store.state.jobs;
+    }
+  },
   methods: {},
-  components: {}
+  components: {
+    Job
+  }
 };
 </script>
 

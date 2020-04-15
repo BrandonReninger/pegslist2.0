@@ -12,7 +12,9 @@ let _api = axios.create({
 export default new Vuex.Store({
   state: {
     cars: [],
-    activeCar: {}
+    activeCar: {},
+    jobs: [],
+    activeJob: {}
   },
   mutations: {
     setCars(state, cars) {
@@ -20,6 +22,12 @@ export default new Vuex.Store({
     },
     setActiveCar(state, car) {
       state.activeCar = car
+    },
+    setJobs(state, jobs) {
+      state.jobs = jobs
+    },
+    setActiveJob(state, job) {
+      state.activeJob = job
     }
   },
   actions: {
