@@ -16,14 +16,13 @@ export default {
   //computed: {},
   methods: {
     selectJob() {
-      this.$store.commit("activeJob", {});
+      this.$store.commit("setActiveJob", {});
       this.$router.push({
         name: "JobDetails",
         params: { jobId: this.jobData._id }
       });
     }
-  },
-  components: {}
+  }
 };
 </script>
 

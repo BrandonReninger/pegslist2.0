@@ -77,6 +77,29 @@ export default new Vuex.Store({
         console.error(error)
       }
     },
+    async getJobs({
+      commit,
+      dispatch
+    }) {
+      try {
+        let res = await _api.get('jobs')
+        console.log(res.data.data)
+        commit('setJobs', res.data.data)
+      } catch (error) {
+        console.error(error)
+      }
+    },
+    async creatJob({
+      commit,
+      dispatch
+    }, newJob) {
+      try {
+        let res = await _api.put('job', newJob)
+        dispatch('getJobs')
+      } catch (error) {
+        console.error(error)
+      }
+    },
     getHouses({
       commit,
       dispatch

@@ -30,6 +30,12 @@ const routes = [{
     component: () => import( /*webpackChunkName: "jobs"*/ '../pages/Jobs.vue')
   },
   {
+    path: '/jobs/:jobId',
+    name: 'JobDetails',
+    // @ts-ignore
+    component: () => import( /*webpackChunkName: "job-details"*/ '../pages/JobDetails.vue')
+  },
+  {
     path: '/about',
     name: 'About',
     // route level code-splitting
