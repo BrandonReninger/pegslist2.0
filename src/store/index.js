@@ -6,7 +6,7 @@ Vue.use(Vuex)
 
 let _api = axios.create({
   baseURL: '//bcw-sandbox.herokuapp.com/api',
-  timeout: 10000
+  timeout: 15000
 })
 
 export default new Vuex.Store({
@@ -43,6 +43,7 @@ export default new Vuex.Store({
         console.error(error)
       }
     },
+
     async getCar({
       commit,
       dispatch
@@ -55,6 +56,7 @@ export default new Vuex.Store({
         console.error(error)
       }
     },
+
     async deleteCar({
       commit,
       dispatch
@@ -66,6 +68,7 @@ export default new Vuex.Store({
         console.error(error)
       }
     },
+
     async createCar({
       commit,
       dispatch
@@ -77,6 +80,7 @@ export default new Vuex.Store({
         console.error(error)
       }
     },
+
     async getJobs({
       commit,
       dispatch
@@ -89,6 +93,7 @@ export default new Vuex.Store({
         console.error(error)
       }
     },
+
     async creatJob({
       commit,
       dispatch
@@ -100,6 +105,7 @@ export default new Vuex.Store({
         console.error(error)
       }
     },
+
     getHouses({
       commit,
       dispatch

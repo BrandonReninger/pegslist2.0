@@ -1,6 +1,6 @@
 <template>
   <div class="create-job border col-12">
-    <form>
+    <form @submit.prevent="create-job()">
       <div class="form-group">
         <label for="title"></label>
         <input
@@ -10,6 +10,7 @@
           placeholder="Enter Job Title"
           aria-describedby="helpId"
           v-model="newJob.title"
+          required
         />
       </div>
       <div class="form-group">
@@ -21,6 +22,7 @@
           placeholder="Enter Company Name"
           aria-describedby="helpId"
           v-model="newJob.company"
+          required
         />
       </div>
       <div class="form-group">
@@ -32,6 +34,7 @@
           placeholder="Enter Hours/week"
           aria-describedby="helpId"
           v-model="newJob.hours"
+          required
         />
       </div>
       <div class="form-group">
@@ -43,6 +46,7 @@
           placeholder="Enter Hourly Rate"
           aria-describedby="helpId"
           v-model="newJob.rate"
+          required
         />
         <div class="form-group">
           <label for="description"></label>
@@ -53,6 +57,7 @@
             placeholder="Enter Job Description"
             aria-describedby="helpId"
             v-model="newJob.description"
+            required
           />
         </div>
       </div>
@@ -67,15 +72,15 @@ export default {
   name: "create-job",
   data() {
     return {
-        newCar:{}
+      newCar: {}
     };
   },
   computed: {},
   methods: {
-      createJob() {
-          this.dispatch("createJob",this.newJob)
-          this.newJob{}
-      }
+    createJob() {
+      this.$store.dispatch("createJob", this.newJob);
+      this.newJob = {};
+    }
   },
   components: {}
 };
